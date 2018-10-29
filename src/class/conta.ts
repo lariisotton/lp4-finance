@@ -1,4 +1,4 @@
 export class Conta {
-  ID number;
+  ID: number;
   DESCRICAO: string;
 }

@@ -6,8 +6,56 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="addLancamentos()">
+        <ion-icon name="add-circle"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
+
+<ion-content>
+
+<div class="mes">
+  <ion-icon class="left" ios="ios-arrow-dropleft-circle" md="md-arrow-dropleft-circle"></ion-icon>
+    <span class="text-center">Outubro</span>
+  <ion-icon class="right" ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+</div>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Extrato</ion-item-divider>
+    <ion-item>
+      <div class="text-left">Creditos</div>
+      <div class="text-right">R$ 1000,00</div>
+    </ion-item>
+    <ion-item>
+      <div class="text-left">Debitos</div>
+      <div class="text-right">R$ 100,00</div>
+    </ion-item>
+    <ion-item>
+      <div class="text-left">Saldo</div>
+      <div class="text-right"> + 900,00</div>
+    </ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Créditos</ion-item-divider>
+    <ion-item>
+      <div class="text-left">Salario 08/10</div>
+      <div class="text-right">R$ 1000,00</div>
+    </ion-item>
+    <ion-item>Salario 10/08</ion-item>
+  </ion-item-group>
+
+  <ion-item-group>
+    <ion-item-divider color="light">Débitos</ion-item-divider>
+    <ion-item>
+      <div class="text-left">Água</div>
+      <div class="text-right">R$ 100,00</div>
+    </ion-item>
+    <ion-item>Outros</ion-item>
+  </ion-item-group>
+</ion-content>
 
 <ion-content padding>
 

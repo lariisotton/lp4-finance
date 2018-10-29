@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-import {ContasAddPage} from '../contas-add/contas-add'
+import {ContasAddPage} from '../contas-add/contas-add';
 
 import {ContasDaoProvider} from '../../providers/contas-dao/contas-dao';
 /**

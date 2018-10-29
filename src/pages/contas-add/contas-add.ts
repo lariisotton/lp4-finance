@@ -19,7 +19,7 @@ export class ContasAddPage {
 
   public conta: Conta;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public daoConta: ContasDaoProvider
+  constructor(public navCtrl: NavController, public navParams: NavParams, public daoConta: ContasDaoProvider,
               public alertCtrl: AlertController) {
 
     this.conta = new Conta();
@@ -39,9 +39,9 @@ export class ContasAddPage {
     if(this.conta.ID){
       //update
       this.daoConta.update(this.conta)
-                   .then(() =>{
-                   .this.alert();
-                   .this.navCtrl.pop();
+                   .then(() => {
+                     this.alert();
+                    this.navCtrl.pop();
                    })
     } else{
       this.daoConta.insert(this.conta)
