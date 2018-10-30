@@ -12,7 +12,7 @@ import { ContasPageModule} from  '../pages/contas/contas.module'
 import { ContasAddPageModule } from '../pages/contas-add/contas-add.module'
 import { DatabaseProvider } from '../providers/database/database';
 import { ContasDaoProvider } from '../providers/contas-dao/contas-dao';
-
+import { LancamentoAddPageModule } from '../pages/lancamento-add/lancamento-add.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,8 @@ import { ContasDaoProvider } from '../providers/contas-dao/contas-dao';
     IonicModule.forRoot(MyApp),
     IntroPageModule,
     ContasPageModule,
-    ContasAddPageModule
+    ContasAddPageModule,
+    LancamentoAddPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -8,25 +8,92 @@
 
   <ion-navbar>
     <ion-title>lancamento-add</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="toLancamentosAdd()">
+        <ion-icon name="ios-checkmark"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
+
+
 
 </ion-header>
 
-<ion-list>
-
-  <ion-item>
-    <ion-label floating>Username</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Password</ion-label>
-    <ion-input type="password"></ion-input>
-  </ion-item>
-
-</ion-list>
-
-
 <ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label floating>Descrição</ion-label>
+      <ion-input name="DESCRICAO" [(ngModel)]="LancamentoDescricao"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Referencia</ion-label>
+      <ion-select [(ngModel)]="mes">
+        <ion-option value="1">Janeiro</ion-option>
+        <ion-option value="2">Fevereiro</ion-option>
+        <ion-option value="3">Março</ion-option>
+        <ion-option value="4">Abril</ion-option>
+        <ion-option value="5">Maio</ion-option>
+        <ion-option value="6">Junho</ion-option>
+        <ion-option value="7">Julho</ion-option>
+        <ion-option value="8">Agosto</ion-option>
+        <ion-option value="9">Setembro</ion-option>
+        <ion-option value="10">Outubro</ion-option>
+        <ion-option value="11">Novembro</ion-option>
+        <ion-option value="12">Dezembro</ion-option>
+      </ion-select>
+
+        <ion-select [(ngModel)]="ano">
+          <ion-option value="2014">2014</ion-option>
+          <ion-option value="2015">2015</ion-option>
+          <ion-option value="2016">2016</ion-option>
+          <ion-option value="2017">2017</ion-option>
+          <ion-option value="2018">2018</ion-option>
+          <ion-option value="2019">2019</ion-option>
+          <ion-option value="2020">2020</ion-option>
+        </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Conta</ion-label>
+      <ion-select [(ngModel)]="conta">
+        <ion-option value="salario">Salario</ion-option>
+        <ion-option value="Fevereiro">Fevereiro</ion-option>
+        <ion-option value="Março">Março</ion-option>
+        <ion-option value="Abril">Abril</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Tipo</ion-label>
+      <ion-select [(ngModel)]="tipo">
+        <ion-option value="credito">Credito</ion-option>
+        <ion-option value="Fevereiro">Fevereiro</ion-option>
+        <ion-option value="Março">Março</ion-option>
+        <ion-option value="Abril">Abril</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-item>
+  <ion-label>Pago</ion-label>
+  <ion-checkbox color="dark" checked="false"></ion-checkbox>
+</ion-item>
 
 </ion-content>
