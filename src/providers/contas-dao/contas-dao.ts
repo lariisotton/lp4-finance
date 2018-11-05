@@ -35,7 +35,7 @@ export class ContasDaoProvider {
                           .catch((e)=>console.error("Erro ao consular", e));
   }
   public get(id){
-    this.dbProvider.getDB()
+    return this.dbProvider.getDB()
                    .then((db:SQLiteObject) => {
                      return db.executeSql("SELECT * FROM CONTAS WHERE ID = ?", [id])
                               .then((data : any) => {
@@ -53,15 +53,15 @@ export class ContasDaoProvider {
                    .catch(e => console.error(e));
   }
   public insert(conta){
-    this.dbProvider.getDB()
-                   .then((db: SQLiteObject) => {
-                     return db.executeSql( "INSERT INTO CONTAS (DESCRICAO) VALUE(?)", [conta.DESCRICAO])
-                        .catch(e => console.error(e));
-                   })
-                   .catch(e => console.error(e));
+    return this.dbProvider.getDB()
+                  .then((db: SQLiteObject) => {
+                    return db.executeSql("INSERT INTO CONTAS (DESCRICAO) VALUES (?)", [conta.DESCRICAO])
+                             .catch(e => console.error(e));
+                  })
+                  .catch(e => console.error("Erro ao inserir", e));
   }
   public update(conta){
-    this.dbProvider.getDB()
+    return this.dbProvider.getDB()
                    .then((db: SQLiteObject) => {
                      return db.executeSql( "UPDATE CONTAS SET DESCRICAO = ? WHERE ID = ?", [conta.DESCRICAO, conta.ID])
                         .catch(e => console.error(e));

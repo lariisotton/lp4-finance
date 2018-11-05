@@ -43,7 +43,7 @@ public listContas: any[] = [];
   delete(conta){
     this.daoContas.delete(conta.ID).then(() => {
       var index = this.listContas.indexOf(conta);
-      this.listContas.splice(index, I);
+      this.listContas.splice(index, 1);
 
       const alert = this.alertCtrl.create({
       title: 'Deletado!',

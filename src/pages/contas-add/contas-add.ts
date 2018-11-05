@@ -24,7 +24,7 @@ export class ContasAddPage {
 
     this.conta = new Conta();
 
-  if (this.NavParams.data.id) {
+  if (this.navParams.data.id) {
     this.daoConta.get(this.navParams.data.id).then((result: any) => {
       this.conta = result;
     });
@@ -36,20 +36,35 @@ export class ContasAddPage {
   }
 
   salvar(){
-    if(this.conta.ID){
-      //update
-      this.daoConta.update(this.conta)
-                   .then(() => {
-                     this.alert();
-                    this.navCtrl.pop();
-                   })
-    } else{
-      this.daoConta.insert(this.conta)
-      then(() => {
-        this.alert();
-        this.navCtrl.pop();
-      });
-}
+    // if(this.conta.ID){
+    //   //update
+    //   this.daoConta.update(this.conta)
+    //                .then(() => {
+    //                  this.alert();
+    //                 this.navCtrl.pop();
+    //                })
+    // } else{
+    //   this.daoConta.insert(this.conta)
+    //   then(() => {
+    //     this.alert();
+    //     this.navCtrl.pop();
+    //   });
+
+    if (this.conta.ID) {
+       // update
+       this.daoConta.update(this.conta)
+                    .then(() => {
+                      this.alert();
+                      this.navCtrl.pop();
+                    });
+     } else {
+       this.daoConta.insert(this.conta)
+                    .then(() => {
+                      this.alert();
+                      this.navCtrl.pop();
+                    });
+      }
+// }
   }
   alert(){
     const alert = this.alertCtrl.create({

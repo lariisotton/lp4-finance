@@ -25,13 +25,9 @@
 
     <ion-item>
       <ion-label floating>Descrição</ion-label>
-      <ion-input name="DESCRICAO" [(ngModel)]="LancamentoDescricao"></ion-input>
+      <ion-input name="DESCRICAO" [(ngModel)]="lancamento.DESCRICAO"></ion-input>
     </ion-item>
 
-    <ion-item>
-      <ion-label floating>Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
 
   </ion-list>
 
@@ -69,11 +65,8 @@
   <ion-list>
     <ion-item>
       <ion-label>Conta</ion-label>
-      <ion-select [(ngModel)]="conta">
-        <ion-option value="salario">Salario</ion-option>
-        <ion-option value="Fevereiro">Fevereiro</ion-option>
-        <ion-option value="Março">Março</ion-option>
-        <ion-option value="Abril">Abril</ion-option>
+      <ion-select name="CONTA" [(ngModel)]="lancamento.CONTA">
+        <ion-option *ngFor="let conta of contas" value="{{conta.ID}}">{{conta.DESCRICAO}}</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>

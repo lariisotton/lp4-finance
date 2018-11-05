@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import{ Lancamento } from '../../class/lancamento';
+import { ContasDaoProvider } from '../../providers/contas-dao/contas-dao';
 
 /**
  * Generated class for the LancamentoAddPage page.
@@ -13,13 +15,27 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-lancamento-add',
   templateUrl: 'lancamento-add.html',
 })
+
+
 export class LancamentoAddPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+public lancamento: Lancamento;
+public contas: any[] = [];
+
+  constructor(public navCtrl: NavController,
+              // public navParams: NavParams,
+             public daoContas: ContasDaoProvider) {
+    this.lancamento = new Lancamento();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LancamentoAddPage');
+  ionViewDidEnter() {
+   this.getContas();
+ }
+
+ getContas() {
+    this.daoContas.getList().then((data:any) => {
+      this.contas = data;
+    }).catch(e => console.error(e));
   }
 
 }
