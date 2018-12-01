@@ -17,9 +17,9 @@
 <ion-content>
 
 <div class="mes">
-  <ion-icon class="left" ios="ios-arrow-dropleft-circle" md="md-arrow-dropleft-circle"></ion-icon>
+  <ion-icon class="left" ios="ios-arrow-dropleft-circle" md="md-arrow-dropleft-circle" (click)="setPreviousMonth()"></ion-icon>
     <span class="text-center">{{mes}}</span>
-  <ion-icon class="right" ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle"></ion-icon>
+  <ion-icon class="right" ios="ios-arrow-dropright-circle" md="md-arrow-dropright-circle" (click)="setNextMonth()"></ion-icon>
 </div>
 
   <ion-item-group>

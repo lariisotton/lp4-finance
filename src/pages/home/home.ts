@@ -71,11 +71,12 @@ getMes(mes) {
         break;
     }
   }
-
-  }
-
   toLancamentosAdd(){
     this.navCtrl.push(LancamentoAddPage);
   }
 
-}
+  }
+
+ 
+
+  

@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>lancamento-add</ion-title>
+    <ion-title>Cadastro</ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="toLancamentosAdd()">
         <ion-icon name="ios-checkmark"></ion-icon>
@@ -74,11 +74,9 @@
   <ion-list>
     <ion-item>
       <ion-label>Tipo</ion-label>
-      <ion-select [(ngModel)]="tipo">
+      <ion-select [(ngModel)]="lancamento.TIPO" name="TIPO" submitText="Ok" cancelText="Cancelar">
         <ion-option value="credito">Credito</ion-option>
-        <ion-option value="Fevereiro">Fevereiro</ion-option>
-        <ion-option value="Março">Março</ion-option>
-        <ion-option value="Abril">Abril</ion-option>
+        <ion-option value="debito">Débito</ion-option>
       </ion-select>
     </ion-item>
   </ion-list>
